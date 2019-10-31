@@ -5,11 +5,12 @@
     </head>
     <body>
         <script>
-            function computerPlay (max) {
-                let num = Math.floor(Math.random() * Math.floor(max));
-                if (num = 0) {
+            function computerPlay () {
+                max = 3;
+                var select = (Math.floor(Math.random() * Math.floor(max)));
+                if (select == 0) {
                     return "Rock";
-                } else if (num = 1) {
+                } else if (select == 1) {
                     return "Paper";
                 } else {
                     return "Scissors";
