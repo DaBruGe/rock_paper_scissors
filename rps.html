@@ -5,7 +5,7 @@
     </head>
     <body>
         <script>
-            function computerPlay () {
+            function computerPlay() {
                 max = 3;
                 var select = (Math.floor(Math.random() * Math.floor(max)));
                 if (select == 0) {
@@ -15,6 +15,34 @@
                 } else {
                     return "Scissors";
                 }
+            }
+
+            function playRound(playerSelection, computerSelection) {
+                let winner = "";
+                switch(playerSelection, computerSelection) {
+                    case (playerSelection == "Rock" && computerSelection == "Paper"):
+                        winner = "Paper beats rock, Computer wins!";
+                        break;
+                    case (playerSelection == "Rock" && computerSelection == "Scissors"):
+                        winner = "Rock beats scissors, You win!";
+                        break;
+                    case (playerSelection == "Paper" && computerSelection == "Scissors"):
+                        winner = "Scissors beats paper, Computer wins!";
+                        break;
+                    case (playerSelection == "Paper" && computerSelection == "Rock"):
+                        winner = "Paper beats rock, You win!";
+                        break;
+                    case (playerSelection == "Scissors" && computerSelection == "Rock"):
+                        winner = "Rock beats Scissors, Computer wins!";
+                        break;
+                    case (playerSelection == "Scissors" && computerSelection == "Paper"):
+                        winner = "Scissors beats paper, You win!";
+                        break;
+                    case (playerSelection == computerSelection):
+                        winner = "Draw! Play again!";
+                        break;                    
+                }
+            return winner;
             }
         </script>
     </body>
