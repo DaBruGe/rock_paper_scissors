@@ -19,30 +19,46 @@
 
             function playRound(playerSelection, computerSelection) {
                 let winner = "";
-                switch(playerSelection, computerSelection) {
+                playerSelection = capitalize(playerSelection);
+                computerSelection = capitalize(computerSelection);
+                switch(true) {
                     case (playerSelection == "Rock" && computerSelection == "Paper"):
                         winner = "Paper beats rock, Computer wins!";
+                        return winner;
                         break;
                     case (playerSelection == "Rock" && computerSelection == "Scissors"):
                         winner = "Rock beats scissors, You win!";
+                        return winner;
                         break;
                     case (playerSelection == "Paper" && computerSelection == "Scissors"):
                         winner = "Scissors beats paper, Computer wins!";
+                        return winner;
                         break;
                     case (playerSelection == "Paper" && computerSelection == "Rock"):
                         winner = "Paper beats rock, You win!";
+                        return winner;
                         break;
                     case (playerSelection == "Scissors" && computerSelection == "Rock"):
                         winner = "Rock beats Scissors, Computer wins!";
+                        return winner;
                         break;
                     case (playerSelection == "Scissors" && computerSelection == "Paper"):
                         winner = "Scissors beats paper, You win!";
+                        return winner;
                         break;
                     case (playerSelection == computerSelection):
                         winner = "Draw! Play again!";
-                        break;                    
+                        return winner;
+                        break;    
+                    default:
+                        alert("Something went wrong!");   
                 }
-            return winner;
+            }
+
+            function capitalize(str) {
+                let lower = str.toLowerCase();
+                finalStr = lower.charAt(0).toUpperCase() + lower.slice(1);
+            return finalStr;
             }
         </script>
     </body>
