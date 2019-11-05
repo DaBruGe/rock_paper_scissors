@@ -55,6 +55,25 @@
                 }
             }
 
+            function game() {
+                let playerScore = 0;
+                let computerScore = 0;
+                let playerSelection;
+                let winner;
+
+                for ( round = 0 ; round < 5 ; round++) {
+                    playerSelection = prompt("Rock, paper or scissors. Make your choice!");
+                    winner = playRound(playerSelection,computerPlay());
+                    if (winner.includes("You")) {
+                        playerScore++;
+                    } else if (winner.includes("Computer")) {
+                        computerScore++;
+                    } 
+                    // Need to print scores
+                    // Need to print outcome statements
+                }
+            }
+
             function capitalize(str) {
                 let lower = str.toLowerCase();
                 finalStr = lower.charAt(0).toUpperCase() + lower.slice(1);
