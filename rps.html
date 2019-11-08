@@ -5,6 +5,8 @@
     </head>
     <body>
         <script>
+            game();
+
             function computerPlay() {
                 max = 3;
                 var select = (Math.floor(Math.random() * Math.floor(max)));
@@ -18,6 +20,9 @@
             }
 
             function playRound(playerSelection, computerSelection) {
+
+                // Need check for invalid words!
+
                 let winner = "";
                 playerSelection = capitalize(playerSelection);
                 computerSelection = capitalize(computerSelection);
@@ -60,17 +65,28 @@
                 let computerScore = 0;
                 let playerSelection;
                 let winner;
-
+                
+                console.log("Player score: " + playerScore + " | Computer score: " + computerScore);
+                
                 for ( round = 0 ; round < 5 ; round++) {
+                    
                     playerSelection = prompt("Rock, paper or scissors. Make your choice!");
                     winner = playRound(playerSelection,computerPlay());
                     if (winner.includes("You")) {
+                        console.log(winner);
                         playerScore++;
                     } else if (winner.includes("Computer")) {
+                        console.log(winner);
                         computerScore++;
                     } 
-                    // Need to print scores
-                    // Need to print outcome statements
+                    console.log("Player score: " + playerScore + " | Computer score: " + computerScore);
+                }
+                if (playerScore > computerScore) {
+                    console.log("Player wins the game!");
+                } else if (computerScore > playerScore) {
+                    console.log("Computer wins the game!");
+                } else {
+                    console.log("The game is a draw!")
                 }
             }
 
