@@ -21,8 +21,6 @@
 
             function playRound(playerSelection, computerSelection) {
 
-                // Need check for invalid words!
-
                 let winner = "";
                 playerSelection = capitalize(playerSelection);
                 computerSelection = capitalize(computerSelection);
@@ -56,7 +54,8 @@
                         return winner;
                         break;    
                     default:
-                        alert("Something went wrong!");   
+                        alert("Invalid entry! Please try again!");
+                        return false;   
                 }
             }
 
@@ -65,20 +64,26 @@
                 let computerScore = 0;
                 let playerSelection;
                 let winner;
+                let check;
                 
                 console.log("Player score: " + playerScore + " | Computer score: " + computerScore);
                 
                 for ( round = 0 ; round < 5 ; round++) {
                     
-                    playerSelection = prompt("Rock, paper or scissors. Make your choice!");
-                    winner = playRound(playerSelection,computerPlay());
+                    do {
+                        playerSelection = prompt("Rock, paper, scissors round " + (round+1) + ". Make your choice!");
+                        winner = playRound(playerSelection,computerPlay());
+                    } while (winner == false);
+
                     if (winner.includes("You")) {
                         console.log(winner);
                         playerScore++;
                     } else if (winner.includes("Computer")) {
                         console.log(winner);
                         computerScore++;
-                    } 
+                    } else { 
+                        console.log(winner);
+                    }
                     console.log("Player score: " + playerScore + " | Computer score: " + computerScore);
                 }
                 if (playerScore > computerScore) {
