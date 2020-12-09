@@ -1,0 +1,21 @@
+body {
+    background-color: wheat;
+    font-family: Arial;
+}
+
+h1 {
+    text-align: center;
+}
+
+button {
+    font-size: 24px;
+    height: 100px;
+    width: 150px;
+    border-width: 5px;
+}
+
+div {
+    width: 100%;
+    text-align: center;
+}
+
